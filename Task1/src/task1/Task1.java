@@ -68,6 +68,56 @@ public class Task1 {
           return count;
     
     }
+     public static int puncCount(String s)
+    {
+          int count = 0;
+          int length =s.length();
+          char[] arr=new char[length];
+          arr=s.toCharArray();
+          for(int i=0; i<length; i++)
+          {
+             if(!(arr[i]>='A' && arr[i]<='Z'  ||  
+                   arr[i]>='a' && arr[i]<='z' || 
+                   arr[i]>='0' && arr[i]<='9' ||
+                   arr[i]==' '))
+             {
+                   count++;
+             }
+          
+          }
+          
+          
+          
+          return count;
+    
+    }
+    
+    public static boolean findSubString(String s, String sub)
+    {
+       boolean flag=false;
+          int length =s.length();
+          length=length;
+          char[] arr=new char[length];
+          arr=s.toCharArray();
+          for(int i=0; i<length ; i++)
+          {
+              if(arr[i]=='t')
+              {
+                  if(arr[i+1]=='h')
+                  {
+                      if(arr[i+2]=='e')
+                      {
+                          flag=true;
+                          
+                      }
+                  }
+              }
+          }
+       
+       
+       return flag;
+     
+    }
 
     public static void main(String[] args) {
         // TODO code application logic here
@@ -79,6 +129,17 @@ public class Task1 {
         System.out.println("Number of Words: " + num);
         num= vowelcounter(s);
         System.out.println("Number of Vowels: " + num);
+        num= puncCount(s);
+        System.out.println("Number of Punctuations: " + num);
+        boolean flag= findSubString(s,"the");
+        if(flag == true)
+        {
+            System.out.println("the is a part of this string.");
+        }
+        else
+        {
+           System.out.println("the is not a part of this string.");
+        }
     }
     
 }
