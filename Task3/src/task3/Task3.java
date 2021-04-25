@@ -29,6 +29,27 @@ public class Task3 {
       return s;
     
     }
+    
+    public static String stringEncryption(String s)
+    {
+        char[] arr = s.toCharArray();
+        int random;
+        random=4;
+        String encrypt="";
+        String ch;
+        
+        for(int i=0 ; i<arr.length/3 ; i++)
+        {
+            
+            arr[i]= (char)(arr[i] + random);
+            ch=Character.toString(arr[i]);
+            encrypt=encrypt+ ch;
+        }
+        return encrypt;
+        
+    }
+    
+    
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner scanner= new Scanner(System.in);
@@ -46,6 +67,13 @@ public class Task3 {
         a=removeInteger(s);
         System.out.println(a);
         
+        //Encryption
+        System.out.println("Input String: ");
+        s= scanner.nextLine();
+        a=stringEncryption(s);
+        System.out.println(a);
+        
+      
     }
     
 }
